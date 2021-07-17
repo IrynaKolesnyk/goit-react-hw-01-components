@@ -1,40 +1,28 @@
 import React from "react";
 
-import friends from "./data-base/friends.json";
-import statistic from "./data-base/statistical-data.json";
-import transactions from "./data-base/transactions.json";
 import user from "./data-base/user.json";
+import statisticalData from "./data-base/statistical-data.json";
+// import friends from "./data-base/friends.json";
+
+// import transactions from "./data-base/transactions.json";
+
+
+import Profile from "./components/Profile/Profile";
+import Statistics from "./components/Statistics/Statistics";
+// import TransactionHistory from "./components/TransactionHistory/TransactionHistory";
+// import FriendsList from "./components/FriendsList/FriendsList";
+
 
 
 function App() {
   return (
     <div className="App">
-      <div className="profile">
 
-      </div>
-      <div className="statistics">
+      <Profile name={user.name} tag={user.tag} location={user.location} avatar={user.avatar} stats={user.stats} />
+      <Statistics title="Upload stats" stats={statisticalData} />;
 
-      </div>
-      <div className="friends">
 
-      </div>
-      <div className="transactions">
 
-      </div>
-      <header className="App-header">
-        {/* <img src="" className="App-logo" alt="logo" /> */}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
     </div>
   );
 }
