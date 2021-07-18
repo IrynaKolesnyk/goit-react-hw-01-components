@@ -1,17 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "./Statistics.css";
+import styles from "./Statistics.module.css";
 
-const Statistics = ({ title, stats, colors }) => {
+const Statistics = ({ title, stats }) => {
   return (
-    <section className="statistics">
-      {title ? <h2 className="statistics_title">{title}</h2> : ""}
+    <section className={styles.statistics}>
+      {title ? <h2 className={styles.title}>{title}</h2> : ""}
 
-      <ul className="statistics_stat-list">
+      <ul className={styles.statList}>
         {stats.map((stat) => (
-          <li key={stat.id} className="statistics_item">
-            <span className="statistics_label">{stat.label}</span>
-            <span className="statistics_percentage">{stat.percentage}</span>
+          <li
+            key={stat.id}
+            className={styles.item}
+            style={{ backgroundColor: generateColor() }}
+          >
+            <span className={styles.label}>{stat.label}</span>
+            <span className={styles.percentage}>{stat.percentage}</span>
           </li>
         ))}
       </ul>
@@ -27,3 +31,7 @@ Statistics.propTypes = {
     percentage: PropTypes.number.isRequired,
   }),
 };
+
+function generateColor() {
+  return "#" + Math.floor(Math.random() * 16777215).toString(16);
+}

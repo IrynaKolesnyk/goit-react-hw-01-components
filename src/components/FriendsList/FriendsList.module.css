@@ -1,4 +1,4 @@
-.friend-list {
+.friendList {
   width: 300px;
   margin: 0 auto 50px;
   padding-left: 0;
@@ -6,7 +6,7 @@
   list-style: none;
 }
 
-.friend-list_item {
+.item {
   display: flex;
   align-items: center;
   padding: 15px;
@@ -15,25 +15,32 @@
   border-top: 1px solid rgb(243, 242, 242);
 }
 
-.friend-list_item:not(:last-child) {
+.item:not(:last-child) {
   margin-bottom: 15px;
 }
 
-.friend-list_status {
-  width: 50px;
-  margin-right: 10px;
+.online {
+  margin-right: 30px;
   font-size: 10px;
-  background-color: tomato;
-  color: tomato;
+  border: 10px solid green;
+
   border-radius: 50%;
 }
 
-.friend-list_avatar {
+.offline {
+  margin-right: 30px;
+  font-size: 10px;
+
+  border: 10px solid tomato;
+  border-radius: 50%;
+}
+
+.avatar {
   width: 100px;
   margin-right: 20px;
 }
 
-.friend-list_name {
+.name {
   font-weight: 600;
   font-size: 25px;
 }
