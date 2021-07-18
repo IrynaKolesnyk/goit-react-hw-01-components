@@ -1,33 +1,29 @@
 import React from "react";
-import PropTypes from 'prop-types';
-import defaultImg from '../../default-images/unnamed.jpg';
-
+import PropTypes from "prop-types";
+import defaultImg from "../../default-images/unnamed.jpg";
+import "./Profile.css";
 
 const Profile = ({ name, tag, location, avatar, stats }) => (
-  <div className="profile">
-    <div class="description">
-      <img
-        src={avatar}
-        alt="Аватар пользователя"
-        class="avatar"
-      />
-      <p class="name">{name}</p>
-      <p class="tag">@{tag}</p>
-      <p class="location">{location}</p>
+  <div className="Profile">
+    <div className="Profile_description">
+      <img src={avatar} alt="Аватар пользователя" className="Profile_avatar" />
+      <p className="Profile_name">{name}</p>
+      <p className="Profile_tag">@{tag}</p>
+      <p className="Profile_location">{location}</p>
     </div>
 
-    <ul class="stats">
-      <li>
-        <span class="label">Followers</span>
-        <span class="quantity">{stats.followers}</span>
+    <ul className="Profile_stats">
+      <li className="Profile_stats_item">
+        <span className="Profile_label">Followers</span>
+        <span className="Profile_quantity">{stats.followers}</span>
       </li>
-      <li>
-        <span class="label">Views</span>
-        <span class="quantity">{stats.views}</span>
+      <li className="Profile_stats_item">
+        <span className="Profile_label">Views</span>
+        <span className="Profile_quantity">{stats.views}</span>
       </li>
-      <li>
-        <span class="label">Likes</span>
-        <span class="quantity">{stats.likes}</span>
+      <li className="Profile_stats_item">
+        <span className="Profile_label">Likes</span>
+        <span className="Profile_quantity">{stats.likes}</span>
       </li>
     </ul>
   </div>
@@ -35,7 +31,6 @@ const Profile = ({ name, tag, location, avatar, stats }) => (
 
 export default Profile;
 
-// default value props
 Profile.defaultProps = {
   avatar: defaultImg,
 };
@@ -50,4 +45,4 @@ Profile.propTypes = {
     views: PropTypes.number.isRequired,
     likes: PropTypes.number.isRequired,
   }),
-}
+};
